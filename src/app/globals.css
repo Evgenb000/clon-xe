@@ -31,3 +31,7 @@ body {
     text-wrap: balance;
   }
 }
+
+.main-bg-blue {
+  background-color: #0A146E;
+}

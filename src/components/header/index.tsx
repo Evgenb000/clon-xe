@@ -10,7 +10,7 @@ const navList = [
 
 export default function Header() {
   return (
-    <div className="fixed top-0 bg-blue-950 w-screen">
+    <div className="fixed top-0 main-bg-blue w-screen">
       <header className="flex flex-row items-center gap-10 h-16 max-w-8xl justify-center">
         <div className="flex flex-row px-4 py-3 items-center">
           <Logo />
