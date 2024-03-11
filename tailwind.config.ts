@@ -15,6 +15,9 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('./tailwind-extended'),
+    
+  ],
 };
 export default config;

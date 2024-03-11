@@ -7,6 +7,7 @@ import iconTwitter from "@/images/iconTwitter.svg";
 import iconIn from "@/images/iconIn.svg";
 import iconInstagram from "@/images/iconInstagram.svg";
 import Link from "next/link";
+import ArrowBottom from "@/images/arrowBottom.svg";
 
 const icons = [
   { name: "Facebook", src: iconFacebook, link: "https://www.facebook.com/xecom" },
@@ -82,8 +83,12 @@ export default function Footer() {
       <footer className="justify-center text-center items-center max-w-screen-xl px-20 py-24 text-lg">
         <div className="grid grid-cols-4 gap-9 text-left">
           <div>
-            <div>Language</div>
-            <div className="text-sm ">English !!!ARROW BOTTOM!!!</div>
+            <div className="t16a27 mb-3">Language</div>
+            <div className="t14a21 flex">
+              English
+              
+              <Image src={ArrowBottom} alt="Arrow" width={10} height={10} className="ml-2" />
+            </div>
           </div>
 
           <div className="flex">
@@ -102,50 +107,50 @@ export default function Footer() {
 
         <div className="grid grid-cols-4 gap-9 mt-14 text-left">
           <div>
-            <div>
+            <div className="t16a27 mb-3">
               Transfer Money
             </div>
 
-            <ul>{TransferMoney.map((item) => <li key={item} className="">{item}</li>)}</ul>
+            <ul>{TransferMoney.map((item) => <li key={item} className="t12a18 mb-2">{item}</li>)}</ul>
           </div>
 
           <div>
-            <div>
+            <div className="t16a27 mb-3">
               XE Business
             </div>
 
-            <ul>{XEBusiness.map((item) => <li key={item} className="">{item}</li>)}</ul>
+            <ul>{XEBusiness.map((item) => <li key={item} className="t12a18 mb-2">{item}</li>)}</ul>
           </div>
 
           <div>
-            <div>
+            <div className="t16a27 mb-3">
               Apps
             </div>
 
-            <ul>{Apps.map((item) => <li key={item} className="">{item}</li>)}</ul>
+            <ul>{Apps.map((item) => <li key={item} className="t12a18 mb-2">{item}</li>)}</ul>
           </div>
 
           <div>
-            <div>
+            <div className="t16a27 mb-3">
               ToolsAndResources
             </div>
 
-            <ul>{ToolsAndResources.map((item) => <li key={item} className="">{item}</li>)}</ul>
+            <ul>{ToolsAndResources.map((item) => <li key={item} className="t12a18 mb-2">{item}</li>)}</ul>
           </div>
         </div>
 
         <div className="text-left mt-14">
           <div>
-            <div>
+            <div className="t16a27 mb-2">
               Company Info
             </div>
 
-            <ul className="flex font-thin">
-              {CompanyInfo.map((item) => <li key={item} className="">{item}</li>)}
+            <ul className="flex font-thin t12a18">
+              {CompanyInfo.map((item) => <li key={item} className="mr-4">{item}</li>)}
             </ul>
           </div>
 
-          <div className="mt-14">
+          <div className="mt-14 t14a21">
             © 1995-2024 XE.com Inc.
           </div>
         </div>

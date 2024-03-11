@@ -11,13 +11,13 @@ const navList = [
 export default function Header() {
   return (
     <div className="fixed top-0 main-bg-blue w-screen text-base">
-      <header className="flex flex-row items-center gap-10 h-16 max-w-8xl justify-center">
+      <header className="flex flex-row items-center gap-10 h-16 max-w-8xl justify-center t15a22">
         <div className="flex flex-row px-4 py-3 items-center">
           <Logo />
 
-          <div className="px-3 py-2 ml-3 cursor-pointer hover:bg-white hover:bg-opacity-20 transition duration-300 rounded-md">Personal</div>
+          <div className="t15a24 px-3 py-2 ml-3 cursor-pointer hover:bg-white hover:bg-opacity-20 transition duration-300 rounded-md">Personal</div>
             |
-          <div className="px-3 py-2 cursor-pointer hover:bg-white hover:bg-opacity-20 transition duration-300 rounded-md opacity-50">Business</div>
+          <div className="t15a24 px-3 py-2 cursor-pointer hover:bg-white hover:bg-opacity-20 transition duration-300 rounded-md opacity-50">Business</div>
         </div>
 
         <nav className="px-10">
