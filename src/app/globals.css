@@ -3,35 +3,49 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --background-main-rgb: 10, 20, 110;
+  --text-white-rgb: 255, 255, 255;
+  --text-dark-rgb: 20, 30, 55;
+  --text-title-rgb: 10, 20, 110;
+  --text-gray-rgb: 55, 80, 110;
+  --text-active-rgb: 0, 111, 232;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: rgb(var(--text-dark-rgb));
+}
+
+.header-bg-vector {
+  background-image: url(../images/headerBG.svg);
+  height: 346px;
+}
+
+.main-bg-blue {
+  background-color: rgb(var(--background-main-rgb));
+}
+
+.t-white {
+  color: rgb(var(--text-white-rgb));
+}
+
+.t-dark {
+  color: rgb(var(--text-dark-rgb));
+}
+
+.t-title {
+  color: rgb(var(--text-title-rgb));
+}
+
+.t-gray {
+  color: rgb(var(--text-gray-rgb));
+}
+
+.t-active {
+  color: rgb(var(--text-active-rgb));
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-}
-
-.main-bg-blue {
-  background-color: #0A146E;
 }

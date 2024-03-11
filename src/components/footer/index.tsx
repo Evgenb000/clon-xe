@@ -79,7 +79,7 @@ const CompanyInfo = [
 
 export default function Footer() {
   return (
-    <div className="flex bottom-0 right-0 left-0 static main-bg-blue w-screen min-h-screen text-center justify-center">
+    <div className="flex bottom-0 right-0 left-0 static main-bg-blue w-screen min-h-screen text-center justify-center t-white">
       <footer className="justify-center text-center items-center max-w-screen-xl px-20 py-24 text-lg">
         <div className="grid grid-cols-4 gap-9 text-left">
           <div>
