@@ -1,4 +1,19 @@
+'use client'
+
 import "../../app/globals.css";
+import Image from "next/image";
+import iconFacebook from "@/images/iconFacebook.svg";
+import iconTwitter from "@/images/iconTwitter.svg";
+import iconIn from "@/images/iconIn.svg";
+import iconInstagram from "@/images/iconInstagram.svg";
+import Link from "next/link";
+
+const icons = [
+  { name: "Facebook", src: iconFacebook, link: "https://www.facebook.com/xecom" },
+  { name: "Twitter", src: iconTwitter, link: "https://twitter.com/xe" },
+  { name: "LinkedIn", src: iconIn, link: "https://www.linkedin.com/company/xecurrencyauthority/" },
+  { name: "Instagram", src: iconInstagram, link: "https://www.instagram.com/poweringyou/" }
+];
 
 const TransferMoney = [
   "Send Money Online",
@@ -45,19 +60,43 @@ const ToolsAndResources = [
   "Glossary"
 ];
 
+const CompanyInfo = [
+  "About Us",
+  "Partnerships",
+  "Careers",
+  "Help Center",
+  "Site Map",
+  "Legal",
+  "Privacy",
+  "Cookie Policy",
+  "Consent Manager",
+  "Money Transfer Information",
+  "File a Complaint",
+  "Accessibility"
+];
+
 
 export default function Footer() {
   return (
     <div className="flex bottom-0 right-0 left-0 static main-bg-blue w-screen min-h-screen text-center justify-center">
-      <footer className="justify-center text-center items-center max-w-screen-xl">
-        <div className="grid grid-cols-4 gap-32">
+      <footer className="justify-center text-center items-center max-w-screen-xl px-20 py-24 text-lg">
+        <div className="grid grid-cols-4 gap-9 text-left">
           <div>
             <div>Language</div>
-            <div>English !!!ARROW BOTTOM!!!</div>
+            <div className="text-sm ">English !!!ARROW BOTTOM!!!</div>
           </div>
 
-          <div>
-            FACEBOOK X LINKEDIN INSTAGRAM 
+          <div className="flex">
+            {icons.map(icon => (
+              <Link key={icon.name} href={icon.link} target="_blank" className=" p-0.5">
+                  <Image
+                    src={icon.src}
+                    alt={`icon ${icon.name}`}
+                    width={32}
+                    height={32}
+                  />
+              </Link>
+            ))}
           </div>
         </div>
 
@@ -97,10 +136,17 @@ export default function Footer() {
 
         <div className="text-left mt-14">
           <div>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio nihil beatae explicabo labore atque eaque.
+            <div>
+              Company Info
+            </div>
+
+            <ul className="flex font-thin">
+              {CompanyInfo.map((item) => <li key={item} className="">{item}</li>)}
+            </ul>
           </div>
+
           <div className="mt-14">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus, cumque!
+            © 1995-2024 XE.com Inc.
           </div>
         </div>
       </footer>
