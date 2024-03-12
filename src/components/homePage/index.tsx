@@ -1,4 +1,4 @@
-import Converter from "../converter";
+import TabBox from "../tabBox";
 
 export default function HomeComponent() {
   return (
@@ -11,7 +11,7 @@ export default function HomeComponent() {
         Best source for currency conversion, sending money online and tracking exchange rates
       </h2>
       
-      <Converter />
+      <TabBox />
     </div>
   );
 }
