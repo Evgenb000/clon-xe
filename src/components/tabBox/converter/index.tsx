@@ -92,8 +92,10 @@ export default function Converter() {
           </div>
         </div>
 
-        <button className={`t16a24 font-bold text-white h-12 px-6 rounded-md bg-blue-600 hover:bg-blue-500 transition-colors duration-300
-          ${warning !== '' ? 'bg-gray-300' : ''}`}>
+        <button
+          className={`t16a24 font-bold text-white h-12 px-6 rounded-md bg-blue-600 hover:bg-blue-500 transition-colors duration-300
+            ${warning !== '' ? 'bg-gray-300' : ''}`}
+        >
           Convert
         </button>
       </div>
