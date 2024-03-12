@@ -1,19 +1,40 @@
+'use client'
+
 import Image from "next/image";
+import React, { useState, useEffect } from "react";
 import imageFromTo from "@/images/fromTo.svg";
-import React from "react";
 import iconInfo from "@/images/iconInfo.svg";
 
 const inputClass = "w-80 h-14 shadow-sm outline-1 outline-blue-300 border rounded-md p-3";
 
 export default function Converter() {
-  const [amount, setAmount] = React.useState('$1.00');
-  const [warning, setWarning] = React.useState('');
+  const [amount, setAmount] = useState('$1.00');
+  const [warning, setWarning] = useState('');
+  const [dataApi, setDataApi] = useState<{ data: any } | null>(null);
+  const [currencies, setCurrencies] = useState<string[]>([]);
+  const [fromCurrency, setFromCurrency] = useState('USD');
+  const [toCurrency, setToCurrency] = useState('EUR');
 
-  const handleChangeAmount = (event: React.ChangeEvent<HTMLInputElement>) => {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_EXYn5P9w8k5BCiu4SZyFqUABKANMPufl6lCj7AQg');
+        const data = await response.json();
+        setDataApi(data);
+        setCurrencies(Object.keys(data?.data || {}));
+      } catch (error) {
+        console.error('Ошибка при выполнении запроса:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const handleChangeAmount = (event: { target: { value: any; }; }) => {
     const inputValue = event.target.value;
-  
+
     setAmount(inputValue);
-  
+
     if (!isValidAmount(inputValue)) {
       setWarning('Please enter a valid amount');
     } else {
@@ -25,18 +46,18 @@ export default function Converter() {
     return /^\$?\d+(\.\d{0,2})?$/.test(value);
   }
 
-  const handleBlur = (event: React.FocusEvent<HTMLInputElement, Element>) => {
+  const handleBlur = (event: { target: { value: any; }; }) => {
     const inputValue = event.target.value;
-    
+
     if (warning.length === 0) {
       if (inputValue.endsWith('.')) {
         setAmount(inputValue + '00');
       }
-  
+
       if (!inputValue.includes('.')) {
         setAmount(inputValue + '.00');
       }
-  
+
       if (inputValue === '$') {
         setWarning('');
         setAmount('$1.00');
@@ -49,6 +70,25 @@ export default function Converter() {
     setWarning('');
   }
 
+  const handleConvert = () => {
+    if (!fromCurrency || !toCurrency) {
+      console.error('Please select both From and To currencies');
+      return;
+    }
+
+    let fromRate: number = 0;
+    let toRate: number = 0  
+
+    if (dataApi) {
+      fromRate = dataApi.data[fromCurrency];
+      toRate = dataApi.data[toCurrency];
+    }
+
+    const amountValue = parseFloat(amount.replace('$', ''));
+    const difference = amountValue * toRate / fromRate;
+    console.log(`Difference between ${fromCurrency} and ${toCurrency}: ${difference}`);
+  }
+
   return (
     <div className=" h-64">
       <div className="grid grid-rows-2 grid-flow-col items-end justify-center text-left gap-4 mb-10">
@@ -57,15 +97,20 @@ export default function Converter() {
           <input
             className={inputClass}
             value={amount}
-            onChange={(event) => handleChangeAmount(event)}
-            onFocus={() => onFocusHandler()}
-            onBlur={(event) => handleBlur(event)}
+            onChange={handleChangeAmount}
+            onFocus={onFocusHandler}
+            onBlur={handleBlur}
           ></input>
           {warning && <div className="text-xs text-red-500 absolute top-16 left-5 mt-1">{warning}</div>}
         </div>
         <div className="font-bold">From</div>
 
-        <input className={inputClass}></input>
+        <select className={inputClass} onChange={(e) => setFromCurrency(e.target.value)}>
+          <option value="">Select</option>
+          {currencies.map(currency => (
+            <option key={currency} value={currency}>{currency}</option>
+          ))}
+        </select>
 
         <div></div>
 
@@ -75,7 +120,12 @@ export default function Converter() {
 
         <div className="font-bold">To</div>
 
-        <input className={inputClass}></input>
+        <select className={inputClass} onChange={(e) => setToCurrency(e.target.value)}>
+          <option value="">Select</option>
+          {currencies.map(currency => (
+            <option key={currency} value={currency}>{currency}</option>
+          ))}
+        </select>
       </div>
 
       <div className="flex justify-between m-16 mt-10">
@@ -95,6 +145,7 @@ export default function Converter() {
         <button
           className={`t16a24 font-bold text-white h-12 px-6 rounded-md bg-blue-600 hover:bg-blue-500 transition-colors duration-300
             ${warning !== '' ? 'bg-gray-300' : ''}`}
+          onClick={handleConvert}
         >
           Convert
         </button>
