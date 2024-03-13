@@ -16,7 +16,7 @@ export default function TabBox() {
   const [activeBox, setActiveBox] = React.useState('Convert');
 
   return (
-    <div className="relative bg-white mt-6 top-10 mb-40 rounded-md">
+    <div className="bg-white mt-6 h-80 rounded-md relative shadow-md">
       <ul className="flex text-center items-center rounded-md">
         {items.map((item, index) => (
           <Link key={item[0]} href={item[1]} onClick={() => setActiveBox(item[0])}>

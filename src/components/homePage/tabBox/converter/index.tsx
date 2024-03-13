@@ -134,11 +134,11 @@ export default function Converter() {
   }
 
   return (
-    <div className=" min-h-64">
+    <div className="min-h-64">
       <div className="grid grid-rows-2 grid-flow-col items-end justify-center text-left gap-4 mb-10">
         <div className="font-bold">Amount</div>
 
-        <div className="relative">
+        <div>
           <input
             className={inputClass}
             value={amount}
@@ -151,7 +151,7 @@ export default function Converter() {
 
         <div className="font-bold">From</div>
 
-        <div className="relative" onBlur={handleFromBlur}>
+        <div onBlur={handleFromBlur}>
           <input
             className={inputClass}
             value={fromCurrency}
@@ -176,7 +176,7 @@ export default function Converter() {
         
         <div className="font-bold">To</div>
 
-        <div className="relative" onBlur={handleToBlur}>
+        <div onBlur={handleToBlur}>
           <input
             className={inputClass}
             value={toCurrency}
@@ -206,7 +206,7 @@ export default function Converter() {
         </div>
       }
 
-      <div className="">
+      <div>
         <div className="flex justify-between m-16 mt-10">
           <div className="flex items-center gap-3 text-left bg-blue-50 t11a16 p-3 rounded-md">
             <Image src={iconInfo} alt="Info icon" width={16} height={16} />
@@ -221,8 +221,8 @@ export default function Converter() {
           </div>
 
           <button
-            className={`t16a24 font-bold text-white h-12 px-6 rounded-md bg-blue-600 hover:bg-blue-500 transition-colors duration-300
-              ${warning !== '' ? 'bg-gray-300 hover:bg-gray-300 hover:cursor-default' : ''}`}
+            className={`btn-blue
+              ${warning !== '' ? 'btn-disabled hover:btn-disabled-hover' : ''}`}
               onClick={warning !== '' ? () => {} : handleConvert}
           >
             Convert

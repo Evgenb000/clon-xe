@@ -1,7 +1,7 @@
 'use client'
 
-import Footer from "@/components/footer";
-import Header from "@/components/header";
+import Footer from "@/components/layouts/footer";
+import Header from "@/components/layouts/header";
 import HomeComponent from "@/components/homePage";
 import { store } from "@/redux/store";
 import { Provider } from "react-redux";
@@ -13,6 +13,7 @@ export default function Home() {
       <Header />
 
       <HomeComponent />
+      
       <Footer />
     </main>
     </Provider>

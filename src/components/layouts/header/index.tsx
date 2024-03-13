@@ -1,9 +1,9 @@
 'use client'
 
 import { SetStateAction, useState } from "react";
-import Logo from "../logo";
-import ResourcesPopUp from "./popUps/resourcesPopUp";
-import ToolsPopUp from "./popUps/toolsPopUp";
+import Logo from "../../logo";
+import ResourcesPopUp from "./popUps";
+import ToolsPopUp from "./toolsPopUp";
 
 const navList = [
   'Send Money',
@@ -25,7 +25,7 @@ export default function Header() {
   };
 
   return (
-    <div className="fixed top-0 main-bg-blue w-screen t-white">
+    <div className="fixed top-0 main-bg-blue w-screen t-white z-10">
       <header className="flex flex-row items-center gap-10 h-16 max-w-8xl justify-center t15a22">
         <div className="flex flex-row px-4 py-3 items-center">
           <Logo />

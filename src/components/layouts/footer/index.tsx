@@ -1,6 +1,6 @@
 'use client'
 
-import "../../app/globals.css";
+import "@/app/globals.css";
 import Image from "next/image";
 import iconFacebook from "@/images/iconFacebook.svg";
 import iconTwitter from "@/images/iconTwitter.svg";
@@ -79,8 +79,8 @@ const CompanyInfo = [
 
 export default function Footer() {
   return (
-    <div className="flex bottom-0 right-0 left-0 static main-bg-blue w-screen min-h-screen text-center justify-center t-white">
-      <footer className="justify-center text-center items-center max-w-screen-xl px-20 py-24 text-lg">
+    <div className="flex bottom-0 right-0 left-0 main-bg-blue w-screen min-h-screen text-center justify-center t-white">
+      <footer className="justify-center text-center items-center max-w-screen-xl pt-40 px-20 py-16 text-lg">
         <div className="grid grid-cols-4 gap-9 text-left">
           <div>
             <div className="t16a27 mb-3">Language</div>
