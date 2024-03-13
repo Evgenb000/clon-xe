@@ -13,8 +13,7 @@ import {
   setShowToInput,
   setHandleConvertOpen,
   setQuotient,
-  setDataApi,
-  setCurrencies
+  fetchCurrencyData,
 } from "@/redux/slices/converterSlice";
 
 const inputClass = "w-80 h-14 shadow-sm outline-1 outline-blue-300 border rounded-md p-3";
@@ -33,6 +32,10 @@ export default function Converter() {
     currencies
   } = useSelector((state: RootState) => state.converter);
   const dispatch = useDispatch<AppDispatch>();
+
+  React.useEffect(() => {
+    dispatch(fetchCurrencyData());
+  }, [dispatch]);
 
   const handleFromCurrencyChange = (currency: string) => {
     console.log(currency);
@@ -153,7 +156,7 @@ export default function Converter() {
             className={inputClass}
             value={fromCurrency}
             readOnly
-            onClick={() => setShowFromInput(true)}
+            onClick={() => dispatch(setShowFromInput(true))}
           ></input>
 
           {showFromInput && (
@@ -178,7 +181,7 @@ export default function Converter() {
             className={inputClass}
             value={toCurrency}
             readOnly
-            onClick={() => setShowToInput(true)}
+            onClick={() => dispatch(setShowToInput(true))}
           ></input>
 
           {showToInput && (

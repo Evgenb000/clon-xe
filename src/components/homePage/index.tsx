@@ -1,4 +1,4 @@
-import TabBox from "../tabBox";
+import TabBox from "./tabBox";
 
 export default function HomeComponent() {
   return (
