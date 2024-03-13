@@ -1,64 +1,64 @@
-'use client'
-
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "@/redux/store";
 import imageFromTo from "@/images/fromTo.svg";
 import iconInfo from "@/images/iconInfo.svg";
+import {
+  setAmount,
+  setWarning,
+  setFromCurrency,
+  setToCurrency,
+  setShowFromInput,
+  setShowToInput,
+  setHandleConvertOpen,
+  setQuotient,
+  setDataApi,
+  setCurrencies
+} from "@/redux/slices/converterSlice";
 
 const inputClass = "w-80 h-14 shadow-sm outline-1 outline-blue-300 border rounded-md p-3";
 
 export default function Converter() {
-  const [amount, setAmount] = useState('$1.00');
-  const [warning, setWarning] = useState('');
-  const [dataApi, setDataApi] = useState<{ data: any } | null>(null);
-  const [currencies, setCurrencies] = useState<string[]>([]);
-  const [fromCurrency, setFromCurrency] = useState('USD');
-  const [toCurrency, setToCurrency] = useState('EUR');
-  const [showFromInput, setShowFromInput] = useState(false);
-  const [showToInput, setShowToInput] = useState(false);
-  const [quotient, setQuotient] = useState(0);
-  const [handleConvertOn, setHandleConvertOn] = useState(false);
+  const {
+    amount,
+    warning,
+    dataApi,
+    fromCurrency,
+    toCurrency,
+    showFromInput,
+    showToInput,
+    handleConvertOpen,
+    quotient,
+    currencies
+  } = useSelector((state: RootState) => state.converter);
+  const dispatch = useDispatch<AppDispatch>();
 
   const handleFromCurrencyChange = (currency: string) => {
     console.log(currency);
-    setFromCurrency(currency);
-    setShowFromInput(false);
-    handleConvertOn && handleConvert();
+    dispatch(setFromCurrency(currency));
+    dispatch(setShowFromInput(false));
+    handleConvertOpen && handleConvert();
   };
   
   const handleToCurrencyChange = (currency: string) => {
     console.log(currency);
-    setToCurrency(currency);
-    setShowToInput(false);
-    handleConvertOn && handleConvert();
+    dispatch(setToCurrency(currency));
+    dispatch(setShowToInput(false));
+    handleConvertOpen && handleConvert();
   };
   
   const handleFromBlur = () => {
     setTimeout(() => {
-      setShowFromInput(false);
+      dispatch(setShowFromInput(false));
     }, 75)
   };
   
   const handleToBlur = () => {
     setTimeout(() => {
-      setShowToInput(false);
+      dispatch(setShowToInput(false));
     }, 75)
   };
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_EXYn5P9w8k5BCiu4SZyFqUABKANMPufl6lCj7AQg');
-        const data = await response.json();
-        setDataApi(data);
-        setCurrencies(Object.keys(data?.data || {}));
-      } catch (error) {
-        console.error('Ошибка при выполнении запроса:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
 
   const handleChangeAmount = (event: { target: { value: string; }; }) => {
     const inputValue =
@@ -66,15 +66,17 @@ export default function Converter() {
         ? event.target.value
         : '$' + event.target.value;
 
-    setAmount(inputValue);
+    dispatch(setAmount(inputValue));
 
     if (!isValidAmount(inputValue)) {
-      setWarning('Please enter a valid amount');
+      dispatch(setWarning('Please enter a valid amount'));
     } else {
-      setWarning('');
+      dispatch(setWarning(''));
     }
 
-    handleConvertOn && handleConvert();
+    handleConvertOpen && handleConvert();
+
+    console.log(amount);
   }
 
   const isValidAmount = (value: string) => {
@@ -86,23 +88,27 @@ export default function Converter() {
 
     if (warning.length === 0) {
       if (inputValue.endsWith('.')) {
-        setAmount(inputValue + '00');
+        dispatch(setAmount(inputValue + '00'));
       }
 
       if (!inputValue.includes('.')) {
-        setAmount(inputValue + '.00');
+        dispatch(setAmount(inputValue + '.00'));
+      }
+
+      if (inputValue.endsWith('.0')) {
+        dispatch(setAmount(inputValue + '0'));
       }
 
       if (inputValue === '$') {
-        setWarning('');
-        setAmount('$1.00');
+        dispatch(setWarning(''));
+        dispatch(setAmount('$1.00'));
       }
     }
   }
 
   const onFocusHandler = () => {
-    setAmount('$');
-    setWarning('');
+    dispatch(setAmount('$'));
+    dispatch(setWarning(''));
   }
 
   const handleConvert = () => {
@@ -112,7 +118,7 @@ export default function Converter() {
     }
 
     let fromRate: number = 0;
-    let toRate: number = 0  
+    let toRate: number = 0;
 
     if (dataApi) {
       fromRate = dataApi.data[fromCurrency];
@@ -120,8 +126,8 @@ export default function Converter() {
     }
 
     const amountValue = parseFloat(amount.replace('$', ''));
-    setQuotient(amountValue * toRate / fromRate);
-    setHandleConvertOn(true);
+    dispatch(setQuotient(amountValue * toRate / fromRate));
+    dispatch(setHandleConvertOpen(true));
   }
 
   return (
@@ -152,7 +158,7 @@ export default function Converter() {
 
           {showFromInput && (
             <div className="absolute bg-white border rounded-md shadow-md mt-1 overflow-y-auto max-h-40">
-              {currencies.map(currency => (
+              {currencies.map((currency: string) => (
                 <button key={currency} className="p-2 cursor-pointer" onClick={() => handleFromCurrencyChange(currency)}>{currency}</button>
               ))}
             </div>
@@ -177,7 +183,7 @@ export default function Converter() {
 
           {showToInput && (
             <div className="absolute bg-white border rounded-md shadow-md mt-1 overflow-y-auto max-h-40">
-              {currencies.map(currency => (
+              {currencies.map((currency: string) => (
                 <button key={currency} className="p-2 cursor-pointer" onClick={() => handleToCurrencyChange(currency)}>{currency}</button>
               ))}
             </div>
