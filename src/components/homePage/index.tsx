@@ -1,3 +1,4 @@
+import ExchangeRates from "./content/exchangeRates";
 import TransferSteps from "./content/transferSteps";
 import TabBox from "./tabBox";
 
@@ -17,6 +18,7 @@ export default function HomeComponent() {
       </div>
       
       <TransferSteps />
+      <ExchangeRates />
     </>
   );
 }
