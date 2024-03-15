@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import imgStepOne from '@/images/stepOne.svg';
 import imgStepTwo from '@/images/stepTwo.svg';
 import imgStepThree from '@/images/stepThree.svg';
@@ -24,34 +23,34 @@ const steps = [
     imgUrl: imgStepThree
   }
 ];
-export default class TransferSteps extends Component {
-  render() {
-    return (
-      <section className='mb-10'>
-        <h3 className='t24a31 font-bold mb-6 text-center'>
-          How to transfer money in 3 easy steps
-        </h3>
 
-        <div className='flex gap-20'>
-          {steps.map(item => 
-            <div key={item.step} className='w-80 h-80 border shadow-md p-6 rounded-lg flex flex-col items-center text-center gap-5'>
-              <Image src={item.imgUrl} alt={item.title + ' image'} width={80} height={80}></Image>
+export default function TransferSteps() {
+  return (
+    <section className='mb-10 mt-28 justify-center text-center'>
+      <h3 className='t24a31 font-bold mb-6 text-center'>
+        How to transfer money in 3 easy steps
+      </h3>
 
-              <h4 className='t20a26 font-bold'>  
-                {item.step}. {item.title}
-              </h4>
+      <div className='flex gap-20 mb-16'>
+        {steps.map(item => 
+          <div key={item.step} className='w-80 h-80 border shadow-md p-6 rounded-lg flex flex-col items-center text-center gap-5'>
+            <Image src={item.imgUrl} alt={item.title + ' image'} width={80} height={80}></Image>
 
-              <p className='t16a27'>
-                {item.description}
-              </p>
-            </div>
-          )}
-        </div>
+            <h4 className='t20a26 font-bold'>  
+              {item.step}. {item.title}
+            </h4>
 
-        <button className=''>
-          Get Started
-        </button>
-      </section>
-    )
-  }
+            <p className='t16a27'>
+              {item.description}
+            </p>
+          </div>
+        )}
+      </div>
+
+      <button className='btn-blue w-56'>
+        Get Started
+      </button>
+    </section>
+  )
 }
+

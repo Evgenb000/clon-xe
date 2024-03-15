@@ -222,7 +222,7 @@ export default function Converter() {
 
           <button
             className={`btn-blue
-              ${warning !== '' ? 'btn-disabled hover:btn-disabled-hover' : ''}`}
+              ${warning !== '' ? 'btn-disabled' : ''}`}
               onClick={warning !== '' ? () => {} : handleConvert}
           >
             Convert
