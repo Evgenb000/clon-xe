@@ -38,14 +38,12 @@ export default function Converter() {
   }, [dispatch]);
 
   const handleFromCurrencyChange = (currency: string) => {
-    console.log(currency);
     dispatch(setFromCurrency(currency));
     dispatch(setShowFromInput(false));
     handleConvertOpen && handleConvert();
   };
   
   const handleToCurrencyChange = (currency: string) => {
-    console.log(currency);
     dispatch(setToCurrency(currency));
     dispatch(setShowToInput(false));
     handleConvertOpen && handleConvert();
@@ -78,8 +76,6 @@ export default function Converter() {
     }
 
     handleConvertOpen && handleConvert();
-
-    console.log(amount);
   }
 
   const isValidAmount = (value: string) => {

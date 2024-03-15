@@ -29,17 +29,10 @@ export default function ExchangeRates() {
   } = useSelector((state: RootState) => state.converter);
   const [toogle, setToogle] = React.useState(true);
 
-  const neededCurr = ['USD', 'AUD']
-
-  // console.log(dataApi.data.filter(curr => neededCurr.includes(curr)));
-  if (dataApi) {
-    let dat = dataApi.data;
-    console.log(neededCurr in dat)
-    console.log(dat)
-  }
+  const neededCurr = ["EUR", "GBP", "JPY", "CAD", "HUF"]
 
   return (
-    <section className='mb-10 mt-28 justify-center text-center w-[1200px]'>
+    <section className='mb-10 mt-28 justify-center text-center w-[1200px] h-96'>
       <h3 className='t24a31 font-bold mb-6 text-center'>
         Xe Live Exchange Rates
       </h3>
@@ -69,11 +62,28 @@ export default function ExchangeRates() {
           <div></div>
           <div></div>
         </div>
-        <div className='flex justify-between gap-40 text-center items-center w-[1152px] h-14'>
-          {/* {console.log(currencies.filter(curr => {
-            neededCurr.includes(curr);
-          }))} */}
+
+        <div className='flex justify-between text-center items-center w-[1152px] h-14'>
+          <div className='h-20'>
+            {currencies.filter(curr => neededCurr.includes(curr)).map(filteredCurr => (
+              <div key={filteredCurr}>
+                {filteredCurr}
+              </div>
+            ))}
+          </div>
+
+          <div>
+          {currencies.filter(curr => neededCurr.includes(curr)).map(filteredCurr => (
+              <div key={filteredCurr}>
+                {dataApi.data[filteredCurr]}
+              </div>
+            ))}
+          </div>
+          <div>22</div>
+          <div>22</div>
+          <div>22</div>
         </div>
+      
       </div>
     </section>
   )
