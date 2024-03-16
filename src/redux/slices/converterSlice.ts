@@ -7,7 +7,7 @@ export const fetchCurrencyData = createAsyncThunk(
   'converter/fetchCurrencyData',
   async (_, { dispatch }) => {
     try {
-      const response = await axios.get('https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_EXYn5P9w8k5BCiu4SZyFqUABKANMPufl6lCj7AQg');
+      const response = await axios.get('https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_EXYn5P9w8k5BCiu4SZyFqUABKANMPufl6lCj7AQg1');
     const data = response.data;
       dispatch(setDataApi(data));
       dispatch(setCurrencies(Object.keys(data?.data || {})));

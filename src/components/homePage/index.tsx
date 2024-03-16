@@ -1,4 +1,5 @@
 import BlockDataApi from "./content/blockDataApi";
+import CurrencyTools from "./content/currencyTools";
 import ExchangeRates from "./content/exchangeRates";
 import PopularTools from "./content/popularTools";
 import TransferSteps from "./content/transferSteps";
@@ -23,6 +24,7 @@ export default function HomeComponent() {
       <ExchangeRates />
       <PopularTools />
       <BlockDataApi />
+      <CurrencyTools />
     </>
   );
 }

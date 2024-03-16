@@ -1,8 +1,6 @@
 import React from 'react'
-import Image from 'next/image';
 
-const services = ['shopify', 'ClearBooks', 'XERO', 'vistaprint'
-];
+const services = ['shopify', 'ClearBooks', 'XERO', 'vistaprint'];
 
 export default function BlockDataApi() {
   return (
