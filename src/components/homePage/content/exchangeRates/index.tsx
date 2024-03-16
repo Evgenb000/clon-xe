@@ -87,8 +87,8 @@ export default function ExchangeRates() {
                   : (((todaysAmount - prevAmount) / prevAmount) * 100).toFixed(2);
 
                 return (
-                  <>
-                    <div key={id} className='flex justify-between text-center items-center w-[1152px] h-14'>
+                  <div key={filteredCurr}>
+                    <div className='flex justify-between text-center items-center w-[1152px] h-14'>
                       <div key={filteredCurr} className='w-40'>
                         {filteredCurr}
                       </div>
@@ -135,7 +135,7 @@ export default function ExchangeRates() {
                       }
                     </div>
                     <hr className='bg-black w-[1152px] my-1' />
-                  </>
+                  </div>
                 );
               })
           }    
@@ -159,8 +159,8 @@ export default function ExchangeRates() {
           && <div className='absolute bg-white border top-12 border-black'>
             {currencies
               .filter(curr => !showedCurrencies.includes(curr))
-              .map(curr => (
-                <div key={curr} onClick={() => dispatch(setShowedCurrencies(curr))}>
+              .map((curr, id) => (
+                <div key={id} onClick={() => dispatch(setShowedCurrencies(curr))}>
                   {curr}
                 </div>
             ))}</div>

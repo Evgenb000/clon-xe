@@ -1,3 +1,4 @@
+import BlockDataApi from "./content/blockDataApi";
 import ExchangeRates from "./content/exchangeRates";
 import PopularTools from "./content/popularTools";
 import TransferSteps from "./content/transferSteps";
@@ -21,6 +22,7 @@ export default function HomeComponent() {
       <TransferSteps />
       <ExchangeRates />
       <PopularTools />
+      <BlockDataApi />
     </>
   );
 }
