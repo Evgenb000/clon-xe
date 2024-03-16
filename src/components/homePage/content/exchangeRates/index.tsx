@@ -2,42 +2,26 @@ import React from 'react'
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  setAmount,
-  setWarning,
-  setFromCurrency,
-  setToCurrency,
-  setShowFromInput,
-  setShowToInput,
-  setHandleConvertOpen,
-  setQuotient,
-  fetchCurrencyData,
-} from "@/redux/slices/converterSlice";
 import { AppDispatch, RootState } from '@/redux/store';
-import { setToggle, setShowAddCurrencies, setShowedCurrencies, fetchCurrencyBYData, setEditCurrenciesOpen, setRemoveCurrencies } from '@/redux/slices/ExchangeRatesSlice';
+import {
+  setToggle,
+  setShowAddCurrencies,
+  setShowedCurrencies,
+  fetchCurrencyBYData,
+  setEditCurrenciesOpen,
+  setRemoveCurrencies 
+} from '@/redux/slices/ExchangeRatesSlice';
 import sendIcon from '@/images/iconSend.svg';
 import chartUp from '@/images/chartUp.svg';
 import chartDown from '@/images/chartDown.svg';
 
 export default function ExchangeRates() {
   const {
-    amount,
-    warning,
     dataApi,
-    fromCurrency,
-    toCurrency,
-    showFromInput,
-    showToInput,
-    handleConvertOpen,
-    quotient,
     currencies
   } = useSelector((state: RootState) => state.converter);
   const {
     dataApiBY,
-    currenciesBY,
-    fromCurrencyBY,
-    toCurrencyBY,
-    quotientBY,
     toggle,
     showedCurrencies,
     showAddCurrencies,
@@ -81,7 +65,7 @@ export default function ExchangeRates() {
               className='t14a21 border-[2px] text-blue-600 border-blue-600 bg-white w-14 h-9 rounded-md hover:bg-blue-200 transition-colors duration-300'
               onClick={() => dispatch(setEditCurrenciesOpen(!editCurrenciesOpen))}
             >
-              Edit
+              {!editCurrenciesOpen ? 'Edit' : 'Done'}
             </button>
           </div>
         </div>

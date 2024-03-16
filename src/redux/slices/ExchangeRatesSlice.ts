@@ -18,7 +18,6 @@ export const fetchCurrencyBYData = createAsyncThunk(
       
       if (currencyData) {
         dispatch(setDataApiBY(currencyData));
-        dispatch(setCurrenciesBY(Object.values(currencyData)));
       } else {
         console.error('No currency data found for the specified date:', beforeYesterday);
       }
@@ -32,10 +31,6 @@ export const fetchCurrencyBYData = createAsyncThunk(
 
 interface ExchangeRatesState {
   dataApiBY: { [currency: string]: number } | null;
-  currenciesBY: string[];
-  fromCurrencyBY: string;
-  toCurrencyBY: string;
-  quotientBY: number;
   toggle: boolean;
   showedCurrencies: string[]
   showAddCurrencies: boolean;
@@ -45,10 +40,6 @@ interface ExchangeRatesState {
 
 const initialState: ExchangeRatesState = {
   dataApiBY: null,
-  currenciesBY: [],
-  fromCurrencyBY: 'USD',
-  toCurrencyBY: 'EUR',
-  quotientBY: 0,
   toggle: false,
   showedCurrencies: ["EUR", "GBP", "JPY", "CAD", "HUF"],
   showAddCurrencies: false,
@@ -62,18 +53,6 @@ const exchangeRatesSlice = createSlice({
   reducers: {
     setDataApiBY(state, action: PayloadAction<{ data: any } | null>) {
       state.dataApiBY = action.payload;
-    },
-    setCurrenciesBY(state, action: PayloadAction<string[]>) {
-      state.currenciesBY = action.payload;
-    },
-    setFromCurrencyBY(state, action: PayloadAction<string>) {
-      state.fromCurrencyBY = action.payload;
-    },
-    setToCurrencyBY(state, action: PayloadAction<string>) {
-      state.toCurrencyBY = action.payload;
-    },
-    setQuotientBY(state, action: PayloadAction<number>) {
-      state.quotientBY = action.payload;
     },
     setToggle(state, action: PayloadAction<boolean>) {
       state.toggle = action.payload;
@@ -95,10 +74,6 @@ const exchangeRatesSlice = createSlice({
 
 export const {
   setDataApiBY,
-  setCurrenciesBY,
-  setFromCurrencyBY,
-  setToCurrencyBY,
-  setQuotientBY,
   setToggle,
   setShowedCurrencies,
   setShowAddCurrencies,
