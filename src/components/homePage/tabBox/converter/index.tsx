@@ -16,8 +16,6 @@ import {
   fetchCurrencyData,
 } from "@/redux/slices/converterSlice";
 
-const inputClass = "w-80 h-14 shadow-sm outline-1 outline-blue-300 border rounded-md p-3";
-
 export default function Converter() {
   const {
     amount,
@@ -136,7 +134,7 @@ export default function Converter() {
 
         <div>
           <input
-            className={inputClass}
+            className='inputCustom'
             value={amount}
             onChange={handleChangeAmount}
             onFocus={onFocusHandler}
@@ -149,7 +147,7 @@ export default function Converter() {
 
         <div onBlur={handleFromBlur}>
           <input
-            className={inputClass}
+            className='inputCustom'
             value={fromCurrency}
             readOnly
             onClick={() => dispatch(setShowFromInput(true))}
@@ -174,7 +172,7 @@ export default function Converter() {
 
         <div onBlur={handleToBlur}>
           <input
-            className={inputClass}
+            className='inputCustom'
             value={toCurrency}
             readOnly
             onClick={() => dispatch(setShowToInput(true))}

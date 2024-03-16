@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { useDispatch } from 'react-redux'
 import converterSlice from './slices/converterSlice';
+import ExchangeRatesSlice from './slices/ExchangeRatesSlice';
 
 export const store = configureStore({
   reducer: {
     converter: converterSlice,
+    exchange: ExchangeRatesSlice
   },
 })
 
