@@ -42,7 +42,7 @@ body {
 }
 
 .btn-blue {
-  text-size: 16px;
+  font-size: 16px;
   line-height: 24px;
   font-weight: bold;
   color: white;
@@ -52,10 +52,6 @@ body {
   background-color: rgb(0, 113, 235);
   transition: background 0.3s ease;
   cursor: pointer;
-}
-
-.h-432 {
-  height: 432px;
 }
 
 .btn-blue:hover {
@@ -70,6 +66,10 @@ body {
 .btn-disabled:hover {
   background-color: rgb(181, 215, 253);
   cursor: default;
+}
+
+.h-432 {
+  height: 432px;
 }
 
 .t-white {
