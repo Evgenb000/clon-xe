@@ -18,6 +18,7 @@ module.exports = plugin(function({ addUtilities } : any) {
     '20a26': { 'font-size': '20px', 'line-height': '26px' },
     '24a31': { 'font-size': '24px', 'line-height': '31.2px' },
     '30a39': { 'font-size': '30px', 'line-height': '39px' },
+    '56a72': { 'font-size': '56px', 'line-height': '72px' },
     '64a76': { 'font-size': '64px', 'line-height': '76.8px' },
   };
 
