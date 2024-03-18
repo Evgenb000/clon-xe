@@ -1,7 +1,7 @@
 import React from 'react';
-import historicalImage from '@/images/historical.svg';
-import calculatorImage from '@/images/calculator.svg';
-import emailImage from '@/images/email.svg';
+import historicalImage from '@/images/homePage/historical.svg';
+import calculatorImage from '@/images/homePage/calculator.svg';
+import emailImage from '@/images/homePage/email.svg';
 import Image from 'next/image';
 
 const currencyTools = [

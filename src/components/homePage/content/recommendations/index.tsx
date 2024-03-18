@@ -5,8 +5,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import { Autoplay, Pagination } from 'swiper/modules';
-import iconStarActive from '@/images/starActive.svg';
-import iconStarDisabled from '@/images/starDisabled.svg';
+import iconStarActive from '@/images/homePage/starActive.svg';
+import iconStarDisabled from '@/images/homePage/starDisabled.svg';
 import comments from '@/static/comments.json';
 
 const activeStar = (

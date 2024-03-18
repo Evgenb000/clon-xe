@@ -1,6 +1,6 @@
-import imgStepOne from '@/images/stepOne.svg';
-import imgStepTwo from '@/images/stepTwo.svg';
-import imgStepThree from '@/images/stepThree.svg';
+import imgStepOne from '@/images/homePage/stepOne.svg';
+import imgStepTwo from '@/images/homePage/stepTwo.svg';
+import imgStepThree from '@/images/homePage/stepThree.svg';
 import Image from 'next/image';
 
 const steps = [

@@ -11,9 +11,9 @@ import {
   setEditCurrenciesOpen,
   setRemoveCurrencies 
 } from '@/redux/slices/ExchangeRatesSlice';
-import sendIcon from '@/images/iconSend.svg';
-import chartUp from '@/images/chartUp.svg';
-import chartDown from '@/images/chartDown.svg';
+import sendIcon from '@/images/homePage/iconSend.svg';
+import chartUp from '@/images/homePage/chartUp.svg';
+import chartDown from '@/images/homePage/chartDown.svg';
 
 export default function ExchangeRates() {
   const {

@@ -1,6 +1,6 @@
-import imgSend from '@/images/toolSend.svg';
-import imgChart from '@/images/toolChart.svg';
-import imgAlert from '@/images/toolAlert.svg';
+import imgSend from '@/images/homePage/toolSend.svg';
+import imgChart from '@/images/homePage/toolChart.svg';
+import imgAlert from '@/images/homePage/toolAlert.svg';
 import Image from 'next/image';
 
 const popularTools = [

@@ -6,7 +6,7 @@ import Converter from "./converter";
 
 const items = [
   ["Convert", "#"],
-  ["Send", "#"],
+  ["Send", "/SendMoney"],
   ["Charts", "#"],
   ["Alerts", "#"]
 ]

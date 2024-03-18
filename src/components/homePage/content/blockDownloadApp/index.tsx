@@ -1,13 +1,13 @@
 import React from 'react'
 import Image from 'next/image';
-import appIphone from '@/images/appiPhones.svg';
-import scanMe from '@/images/scanMe.svg';
-import downloadAppStore from '@/images/downloadAppStore.svg';
-import downloadGooglePlay from '@/images/downloadGooglePlay.svg';
-import appStore from '@/images/appStore.svg';
-import googlePlay from '@/images/googlePlay.svg';
-import trustPilot from '@/images/trustPilot.svg';
-import bgImage from '@/images/bgBlockDownloadApp.svg';
+import appIphone from '@/images/homePage/appiPhones.svg';
+import scanMe from '@/images/homePage/scanMe.svg';
+import downloadAppStore from '@/images/homePage/downloadAppStore.svg';
+import downloadGooglePlay from '@/images/homePage/downloadGooglePlay.svg';
+import appStore from '@/images/homePage/appStore.svg';
+import googlePlay from '@/images/homePage/googlePlay.svg';
+import trustPilot from '@/images/homePage/trustPilot.svg';
+import bgImage from '@/images/homePage/bgBlockDownloadApp.svg';
 import Link from 'next/link';
 
 export default function BlockDownloadApp() {

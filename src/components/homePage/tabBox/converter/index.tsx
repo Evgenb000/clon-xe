@@ -2,8 +2,8 @@ import Image from "next/image";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/redux/store";
-import imageFromTo from "@/images/fromTo.svg";
-import iconInfo from "@/images/iconInfo.svg";
+import imageFromTo from "@/images/homePage/fromTo.svg";
+import iconInfo from "@/images/homePage/iconInfo.svg";
 import {
   setAmount,
   setWarning,

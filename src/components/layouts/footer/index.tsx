@@ -2,12 +2,12 @@
 
 import "@/app/globals.css";
 import Image from "next/image";
-import iconFacebook from "@/images/iconFacebook.svg";
-import iconTwitter from "@/images/iconTwitter.svg";
-import iconIn from "@/images/iconIn.svg";
-import iconInstagram from "@/images/iconInstagram.svg";
+import iconFacebook from "@/images/homePage/iconFacebook.svg";
+import iconTwitter from "@/images/homePage/iconTwitter.svg";
+import iconIn from "@/images/homePage/iconIn.svg";
+import iconInstagram from "@/images/homePage/iconInstagram.svg";
 import Link from "next/link";
-import ArrowBottom from "@/images/arrowBottom.svg";
+import ArrowBottom from "@/images/homePage/arrowBottom.svg";
 
 const icons = [
   { name: "Facebook", src: iconFacebook, link: "https://www.facebook.com/xecom" },
