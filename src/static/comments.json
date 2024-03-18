@@ -1,0 +1,86 @@
+[
+  {
+    "id": 0,
+    "rating": 5,
+    "title": "very secure",
+    "comment": "very secure, and fast, very good at keeping you up to date on when money sent",
+    "name": "IRENE ASH"
+  },
+  {
+      "id": 1,
+      "rating": 5,
+      "title": "Excellent Service thank you",
+      "comment": "Excellent Service",
+      "name": "Samy"
+  },
+  {
+      "id": 2,
+      "rating": 5,
+      "title": "GREAT TO USE",
+      "comment": "GREAT TO USE Have been using HiFX/Xe for nearly 8 years. Never had a transaction issue. Thanks Guys and...",
+      "name": "Samantha"
+  },
+  {
+      "id": 3,
+      "rating": 5,
+      "title": "Ease of transfer",
+      "comment": "Once set up, the transfers were transparent. The staff were helpful in setting up the initial requirements as...",
+      "name": "James"
+  },
+  {
+      "id": 4,
+      "rating": 5,
+      "title": "Brilliant experience using xe to…",
+      "comment": "Brilliant experience using xe to transfer funds from my uk bank to my bank in Florida. It was my second time using...",
+      "name": "Diane"
+  },
+  {
+      "id": 5,
+      "rating": 5,
+      "title": "Simple to do.",
+      "comment": "Simple to do.",
+      "name": "Ronson"
+  },
+  {
+      "id": 6,
+      "rating": 4,
+      "title": "Once the accounts are set up the system…",
+      "comment": "Once the accounts are set up the system is fairly easy to use",
+      "name": "Martin"
+  },
+  {
+      "id": 7,
+      "rating": 5,
+      "title": "Excellent exchange rates and fast",
+      "comment": "Excellent exchange rates. Fast and reliable.",
+      "name": "Abrar"
+  },
+  {
+      "id": 8,
+      "rating": 5,
+      "title": "The best platform to send money abroad",
+      "comment": "The best platform to send money abroad! Trust XE.com to send your money securely!",
+      "name": "Sharath Raj"
+  },
+  {
+      "id": 9,
+      "rating": 5,
+      "title": "Quick and easy",
+      "comment": "Quick and easy. Thank you!",
+      "name": "Gwendolen Devoe"
+  },
+  {
+      "id": 10,
+      "rating": 4,
+      "title": "The transfer time was longer than normal",
+      "comment": "The transfer is easy however it took a long time to be transferred even taking into account a weekend.",
+      "name": "Amanda Nieurzyla-John"
+  },
+  {
+      "id": 11,
+      "rating": 5,
+      "title": "Very good",
+      "comment": "Very good",
+      "name": "James"
+  }
+]
