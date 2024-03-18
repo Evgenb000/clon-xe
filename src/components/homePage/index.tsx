@@ -1,8 +1,11 @@
 import BlockDataApi from "./content/blockDataApi";
+import BlockDownloadApp from "./content/blockDownloadApp";
+import CurrencyProfiles from "./content/currencyProfiles";
 import CurrencyTools from "./content/currencyTools";
 import ExchangeRates from "./content/exchangeRates";
 import PopularTools from "./content/popularTools";
 import Recommendations from "./content/recommendations";
+import Subscription from "./content/subscription";
 import TransferSteps from "./content/transferSteps";
 import TabBox from "./tabBox";
 
@@ -27,6 +30,9 @@ export default function HomeComponent() {
       <BlockDataApi />
       <CurrencyTools />
       <Recommendations />
+      <BlockDownloadApp />
+      <Subscription />
+      <CurrencyProfiles />
     </>
   );
 }

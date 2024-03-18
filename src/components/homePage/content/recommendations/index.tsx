@@ -3,7 +3,8 @@ import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
+import 'swiper/css/autoplay';
+import { Autoplay, Pagination } from 'swiper/modules';
 import iconStarActive from '@/images/starActive.svg';
 import iconStarDisabled from '@/images/starDisabled.svg';
 import comments from '@/static/comments.json';
@@ -45,8 +46,9 @@ export default function Recommendations() {
 
       <div className='w-[1050px]'>
         <Swiper
-        modules={[Pagination]}
+        modules={[Pagination, Autoplay]}
         spaceBetween={80}
+        autoplay={true}
         slidesPerView={3}
         pagination={{ clickable: true }}
         className='h-[250px] p-2'
