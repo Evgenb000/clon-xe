@@ -6,6 +6,8 @@ import Image from 'next/image';
 import ChooseXe from '@/components/sendMoney/content/chooseXe';
 import DownloadAppSendMoney from '@/components/sendMoney/content/downloadAppSendMoney/indes';
 import CustomersRecommend from '@/components/sendMoney/content/customersRecommend';
+import SendMoneySteps from '@/components/sendMoney/content/sendMoneySteps';
+import GetStarted from '@/components/sendMoney/content/getStarted';
 
 export default function SendMoney() {
   return (
@@ -37,6 +39,8 @@ export default function SendMoney() {
       <ChooseXe />
       <DownloadAppSendMoney />
       <CustomersRecommend />
+      <SendMoneySteps />
+      <GetStarted />
     </div>
   )
 }
