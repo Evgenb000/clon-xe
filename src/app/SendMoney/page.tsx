@@ -4,6 +4,7 @@ import imageTrustpilot from '@/images/sendMoney/buttonTrustpilot.svg';
 import imageSecureTransfer from '@/images/sendMoney/buttonSecureTransfers.svg';
 import Image from 'next/image';
 import ChooseXe from '@/components/sendMoney/content/chooseXe';
+import DownloadAppSendMoney from '@/components/sendMoney/content/downloadAppSendMoney/indes';
 
 export default function SendMoney() {
   return (
@@ -33,6 +34,7 @@ export default function SendMoney() {
       </div>
       
       <ChooseXe />
+      <DownloadAppSendMoney />
     </div>
   )
 }
