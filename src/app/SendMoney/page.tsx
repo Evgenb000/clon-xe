@@ -8,6 +8,7 @@ import DownloadAppSendMoney from '@/components/sendMoney/content/downloadAppSend
 import CustomersRecommend from '@/components/sendMoney/content/customersRecommend';
 import SendMoneySteps from '@/components/sendMoney/content/sendMoneySteps';
 import GetStarted from '@/components/sendMoney/content/getStarted';
+import SendAndRecieve from '@/components/sendMoney/content/sendAndReceive';
 
 export default function SendMoney() {
   return (
@@ -41,6 +42,7 @@ export default function SendMoney() {
       <CustomersRecommend />
       <SendMoneySteps />
       <GetStarted />
+      <SendAndRecieve />
     </div>
   )
 }
