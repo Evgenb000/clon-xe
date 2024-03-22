@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 
 const services = ['shopify', 'ClearBooks', 'XERO', 'vistaprint'];
@@ -12,7 +13,9 @@ export default function BlockDataApi() {
           <div key={service} className='font-bold t24a31'>{service}</div>
         ))}
       </div>
-      <button className='btn-blue'>See our API plans</button>
+      <button className='btn-blue'>
+        <Link href='/OurPlans'>See our API plans</Link>
+      </button>
     </div>
   )
 }

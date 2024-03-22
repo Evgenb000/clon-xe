@@ -3,6 +3,7 @@ import historicalImage from '@/images/homePage/historical.svg';
 import calculatorImage from '@/images/homePage/calculator.svg';
 import emailImage from '@/images/homePage/email.svg';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const currencyTools = [
   {text: 'Historical Currency Rates', image: historicalImage},
@@ -25,7 +26,9 @@ export default function CurrencyTools() {
         ))}
       </div>
 
-      <button className='btn-blue mt-12 w-[220px]'>More Tools</button>
+      <button className='btn-blue mt-12 w-[220px]'>
+        <Link href='/MoreTools'>More Tools</Link>
+      </button>
     </div>
   )
 }

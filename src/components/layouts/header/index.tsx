@@ -1,16 +1,17 @@
 'use client'
 
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import Logo from "../../logo";
-import ResourcesPopUp from "./popUps";
-import ToolsPopUp from "./toolsPopUp";
+import ResourcesPopUp from "./popUps/resourcesPopUp";
+import ToolsPopUp from "./popUps/toolsPopUp";
+import Link from "next/link";
 
 const navList = [
-  'Send Money',
-  'Converter',
-  'Currency API',
-  'Tools',
-  'Resources'
+  {name: 'Send Money', link: '/SendMoney'},
+  {name: 'Converter', link: '/Converter'},
+  {name: 'Currency API', link: '/CurrencyAPI'},
+  {name: 'Tools', link: ''},
+  {name: 'Resources', link: ''},
 ]
 
 export default function Header() {
@@ -31,27 +32,28 @@ export default function Header() {
           <Logo />
 
           <div className="t15a24 px-3 py-2 ml-3 cursor-pointer hover:bg-white hover:bg-opacity-20 transition duration-300 rounded-md">
-            Personal
+            <Link href='/'>Personal</Link>
           </div>
             |
           <div className="t15a24 px-3 py-2 cursor-pointer hover:bg-white hover:bg-opacity-20 transition duration-300 rounded-md opacity-50">
-            Business
+            <Link href='/Business'>Business</Link>
           </div>
         </div>
 
         <nav className="px-10">
           <ul className="flex flex-row gap-0 p-2">
             {navList.map(item =>
-              <li
-                key={item}
-                className="px-4 py-2 cursor-pointer hover:bg-white hover:bg-opacity-20 transition duration-300 rounded-md"
-                onMouseEnter={() => handleMenuItemHover(item)}
-                onMouseLeave={handleMenuItemLeave}
-              >
-                {item === "Tools" && activeMenuItem === "Tools" && <ToolsPopUp />}
-                {item === "Resources" && activeMenuItem === "Resources" && <ResourcesPopUp />}
-                {item}
-              </li>
+              <Link key={item.name} href={item.link}>
+                  <li
+                  className="px-4 py-2 cursor-pointer hover:bg-white hover:bg-opacity-20 transition duration-300 rounded-md"
+                  onMouseEnter={() => handleMenuItemHover(item.name)}
+                  onMouseLeave={handleMenuItemLeave}
+                >
+                  {item.name === "Tools" && activeMenuItem === "Tools" && <ToolsPopUp />}
+                  {item.name === "Resources" && activeMenuItem === "Resources" && <ResourcesPopUp />}
+                  {item.name}
+                </li>
+              </Link>
             )}
           </ul>
         </nav>

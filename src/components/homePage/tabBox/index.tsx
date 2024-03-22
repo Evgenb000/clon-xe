@@ -5,10 +5,10 @@ import React from "react";
 import Converter from "./converter";
 
 const items = [
-  ["Convert", "#"],
+  ["Convert", "/"],
   ["Send", "/SendMoney"],
-  ["Charts", "#"],
-  ["Alerts", "#"]
+  ["Charts", "/Charts"],
+  ["Alerts", "/Alerts"],
 ]
 
 export default function TabBox() {
