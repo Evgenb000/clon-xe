@@ -15,13 +15,18 @@ export default function TabBox() {
   const [activeBox, setActiveBox] = React.useState('Convert');
 
   return (
-    <div className="bg-white mt-6 h-432 rounded-md relative shadow-md">
-      <ul className="flex text-center items-center rounded-md">
+    <div className="bg-white mt-6 h-432 rounded-md relative shadow-md ">
+      <ul className="flex justify-between text-center items-center rounded-md">
         {items.map((item, index) => (
-          <Link key={item[0]} href={item[1]} onClick={() => setActiveBox(item[0])}>
+          <Link
+            key={item[0]}
+            href={item[1]}
+            onClick={() => setActiveBox(item[0])}
+            className="flex-grow"
+          >
             {activeBox === item[0] ? (
               <li
-                className={`mb-2 w-72 h-14 flex items-center justify-center t14a21 bg-white t-active font-bold ${
+                className={`mb-2 h-14 flex items-center justify-center t14a21 bg-white t-active font-bold ${
                   index === 0 ? 'rounded-l-md' : ''
                 } ${index === items.length - 1 ? 'rounded-r-md' : ''}`
                 }
@@ -30,7 +35,7 @@ export default function TabBox() {
               </li>
             ) : (
               <li
-                className={`mb-2 w-72 h-14 flex items-center justify-center t14a21 bg-blue-50 t-gray ${
+                className={`mb-2 h-14 flex items-center justify-center t14a21 bg-blue-50 t-gray ${
                   index === 0 ? 'rounded-l-md' : ''
                 } ${index === items.length - 1 ? 'rounded-r-md' : ''}`
                 }

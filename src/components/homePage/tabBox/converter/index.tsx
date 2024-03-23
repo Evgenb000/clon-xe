@@ -128,7 +128,7 @@ export default function Converter() {
   }
 
   return (
-    <div className="min-h-64">
+    <div className="min-h-64 px-6">
       <div className="grid grid-rows-2 grid-flow-col items-end justify-center text-left gap-4 mb-10">
         <div className="font-bold">Amount</div>
 
@@ -201,7 +201,7 @@ export default function Converter() {
       }
 
       <div>
-        <div className="flex justify-between m-16 mt-10">
+        <div className="flex justify-between mt-10">
           <div className="flex items-center gap-3 text-left bg-blue-50 t11a16 p-3 rounded-md">
             <Image src={iconInfo} alt="Info icon" width={16} height={16} />
             <div>

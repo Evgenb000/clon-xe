@@ -26,14 +26,14 @@ const steps = [
 
 export default function TransferSteps() {
   return (
-    <section className='mb-10 mt-28 justify-center text-center'>
+    <section className='mb-10 mt-28 justify-center text-center px-4'>
       <h3 className='t24a31 font-bold mb-6 text-center'>
         How to transfer money in 3 easy steps
       </h3>
 
-      <div className='flex gap-20 mb-16'>
+      <div className='flex gap-10 lg:gap-20 mb-16'>
         {steps.map(item => 
-          <div key={item.step} className='w-80 h-80 border shadow-md p-6 rounded-lg flex flex-col items-center text-center gap-5'>
+          <div key={item.step} className='w-48 lg:w-80 lg:h-80 border shadow-md p-6 rounded-lg flex flex-col items-center text-center gap-5'>
             <Image src={item.imgUrl} alt={item.title + ' image'} width={80} height={80}></Image>
 
             <h4 className='t20a26 font-bold'>  

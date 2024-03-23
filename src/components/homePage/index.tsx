@@ -12,7 +12,7 @@ import TabBox from "./tabBox";
 export default function HomeComponent() {
   return (
     <>
-      <div className="flex h-max text-center flex-col items-center main-bg-blue pt-11 w-screen header-bg-vector mb-40">
+      <div className="flex h-max text-center flex-col items-center main-bg-blue pt-11 w-screen header-bg-vector mb-40 px-4">
         <h1 className="t-white t30a39 font-bold">
           Trusted Global Currency Converter & Money Transfers
         </h1>
