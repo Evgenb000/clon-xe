@@ -2,31 +2,12 @@
 
 import React from "react";
 import Logo from "../../logo";
-import ResourcesPopUp from "./popUps/resourcesPopUp";
-import ToolsPopUp from "./popUps/toolsPopUp";
 import Link from "next/link";
 import NavMenuDesctop from "./navMenuDesctop";
 import NavMenuMobile from "./navMenuMobile";
 
-const navList = [
-  {name: 'Send Money', link: '/SendMoney'},
-  {name: 'Converter', link: '/Converter'},
-  {name: 'Currency API', link: '/CurrencyAPI'},
-  {name: 'Tools', link: ''},
-  {name: 'Resources', link: ''},
-]
-
 export default function Header() {
-  const [activeMenuItem, setActiveMenuItem] = React.useState<string | null>(null);
   const [windowWidth, setWindowWidth] = React.useState<number>(0);
-
-  const handleMenuItemHover = (item: string) => {
-    setActiveMenuItem(item);
-  };
-
-  const handleMenuItemLeave = () => {
-    setActiveMenuItem(null);
-  };
 
   React.useEffect(() => {
     const handleResize = () => {
@@ -40,11 +21,15 @@ export default function Header() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const widthMobile = windowWidth < 1200;
+  const widthMobile = windowWidth < 1280;
 
   return (
     <div className="fixed top-0 main-bg-blue w-screen t-white z-10">
-      <header className="flex flex-row items-center gap-10 h-16 max-w-8xl justify-center t15a22">
+      <header className="
+        flex flex-row items-center gap-10 h-16 max-w-8xl t15a22
+        justify-between xl:justify-center
+        px-4
+      ">
         <div className="flex flex-row px-4 py-3 items-center">
           <Logo />
 
@@ -61,7 +46,6 @@ export default function Header() {
           ? <NavMenuDesctop />
           : <NavMenuMobile />
         }
-
       </header>
     </div>
   );
