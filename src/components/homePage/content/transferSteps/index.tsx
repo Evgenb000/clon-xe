@@ -46,7 +46,7 @@ export default function TransferSteps() {
   const mobileSwiper = windowWidth < 768 ? true : false
 
   return (
-    <section className='mb-10 mt-28 justify-center text-center px-4'>
+    <section className='mb-10 mt-[500px] md:mt-28 justify-center text-center px-4'>
       <h3 className='t24a31 font-bold mb-6 text-center'>
         How to transfer money in 3 easy steps
       </h3>
