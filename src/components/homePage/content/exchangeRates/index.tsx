@@ -39,14 +39,14 @@ export default function ExchangeRates() {
   }
 
   return (
-    <section className='mb-10 mt-28 justify-center text-center w-[1200px] h-max'>
+    <section className='mb-10 mt-28 w-[360px] md:w-[700px] lg:w-[900px] xl:w-[1200px] h-max'>
       <h3 className='t24a31 font-bold mb-6 text-center'>
         Xe Live Exchange Rates
       </h3>
 
-      <div className='flex mb-16 justify-start items-start flex-col'>
-        <div className='flex justify-between text-center items-center w-[1152px] h-14'>
-          <div className="flex gap-2 text-center justify-center items-center w-40">
+      <div className='flex mb-16 justify-start items-center flex-col'>
+        <div className='flex justify-between text-center items-center w-[380px] md:w-[700px] lg:w-[900px] xl:w-[1200px] h-20 md:h-14'>
+          <div className="flex flex-col md:flex-row gap-2 text-center justify-center items-center w-20 md:w-40">
             Inverse
           
             <div
@@ -57,10 +57,10 @@ export default function ExchangeRates() {
               <motion.div className='h-4 w-4 rounded-full bg-white shadow-sm shadow-black' />
             </div>
           </div>
-          <div className='w-40'>Amount</div>
-          <div className='w-40'>Change (24h)</div>
-          <div className='w-40'>Chart (24h)</div>
-          <div className='w-40'>
+          <div className='w-16 md:w-20 lg:w-32 xl:w-40'>Amount</div>
+          <div className='w-16 md:w-20 lg:w-32 xl:w-40'>Change (24h)</div>
+          <div className='w-16 md:w-20 lg:w-32 xl:w-40'>Chart (24h)</div>
+          <div className='w-16 md:w-20 lg:w-32 xl:w-40'>
             <button
               className='t14a21 border-[2px] text-blue-600 border-blue-600 bg-white w-14 h-9 rounded-md hover:bg-blue-200 transition-colors duration-300'
               onClick={() => dispatch(setEditCurrenciesOpen(!editCurrenciesOpen))}
@@ -69,12 +69,12 @@ export default function ExchangeRates() {
             </button>
           </div>
         </div>
-        <div className='flex justify-between text-center items-center w-[1152px] h-14 main-bg-blue text-white rounded-md'>
-          <div className='w-40'>Dollar</div>
-          <div className='w-40'>1</div>
-          <div className='w-40'></div>
-          <div className='w-40'></div>
-          <div className='w-40'></div>
+        <div className='flex justify-between text-center items-center w-[380px] md:w-[700px] lg:w-[900px] xl:w-[1200px] h-14 main-bg-blue text-white rounded-md'>
+          <div className='w-16 md:w-20 lg:w-32 xl:w-40'>Dollar</div>
+          <div className='w-16 md:w-20 lg:w-32 xl:w-40'>1</div>
+          <div className='w-16 md:w-20 lg:w-32 xl:w-40'></div>
+          <div className='w-16 md:w-20 lg:w-32 xl:w-40'></div>
+          <div className='w-16 md:w-20 lg:w-32 xl:w-40'></div>
         </div>
           {
             currencies
@@ -88,12 +88,12 @@ export default function ExchangeRates() {
 
                 return (
                   <div key={filteredCurr}>
-                    <div className='flex justify-between text-center items-center w-[1152px] h-14'>
-                      <div key={filteredCurr} className='w-40'>
+                    <div className='flex justify-between text-center items-center w-[360px] md:w-[700px] lg:w-[900px] xl:w-[1200px] h-14'>
+                      <div key={filteredCurr} className='w-9 md:w-20 lg:w-32 xl:w-40'>
                         {filteredCurr}
                       </div>
 
-                      <div className='w-40'>
+                      <div className='w-14 md:w-20 lg:w-32 xl:w-40'>
                         {toggle
                           ? (1 / todaysAmount).toFixed(4) + ' USD'
                           : todaysAmount.toFixed(4)
@@ -101,22 +101,22 @@ export default function ExchangeRates() {
                       </div>
 
                       {parseFloat(changes) >= 0
-                        ? <div className='w-40 text-green-500'>
+                        ? <div className='w-16 md:w-20 lg:w-32 xl:w-40 text-green-500'>
                             +{changes}%
                           </div> 
-                        : <div className='w-40 text-red-500'>
+                        : <div className='w-16 md:w-20 lg:w-32 xl:w-40 text-red-500'>
                             {changes}%
                           </div>
                       }
 
-                      <div className='w-40 flex justify-center'>
+                      <div className='w-16 md:w-20 lg:w-32 xl:w-40 flex justify-center'>
                       {parseFloat(changes) >= 0
                         ? <Image src={chartUp} alt='Chart`s up' /> 
                         : <Image src={chartDown} alt='Chart`s down' /> 
                       }
                       </div>
 
-                      <div className='w-40 flex justify-center'>
+                      <div className='w-16 md:w-20 lg:w-32 xl:w-40 flex justify-center'>
                         <button className='btn-blue w-20 flex text-center items-center justify-center'>
                           <Image src={sendIcon} alt='send icon' width={24} height={24} />
 
@@ -134,7 +134,7 @@ export default function ExchangeRates() {
                         
                       }
                     </div>
-                    <hr className='bg-black w-[1152px] my-1' />
+                    <hr className='bg-black w-[360px] md:w-[700px] lg:w-[900px] xl:w-[1200px] my-1' />
                   </div>
                 );
               })
@@ -156,13 +156,17 @@ export default function ExchangeRates() {
 
 
         {showAddCurrencies
-          && <div className='absolute bg-white border top-12 border-black'>
+          && <div className='absolute top-10 flex flex-wrap justify-center bg-white border rounded-md shadow-md mt-1 overflow-y-auto w-44 max-h-36'>
             {currencies
               .filter(curr => !showedCurrencies.includes(curr))
               .map((curr, id) => (
-                <div key={id} onClick={() => dispatch(setShowedCurrencies(curr))}>
+                <button
+                  key={id}
+                  onClick={() => dispatch(setShowedCurrencies(curr))}
+                  className='p-2 cursor-pointer w-12 h-8'
+                >
                   {curr}
-                </div>
+                </button>
             ))}</div>
         }
       </div>

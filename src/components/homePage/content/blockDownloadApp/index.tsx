@@ -12,14 +12,14 @@ import Link from 'next/link';
 
 export default function BlockDownloadApp() {
   return (
-    <div className='w-[1200px] mb-20 bg'>
+    <div className='md:w-[700px] lg:w-[1200px] mb-20 bg'>
       <Image src={bgImage} alt='background image' className='absolute left-0 -z-10' />
-      <div className='flex justify-center gap-[220px]'>
+      <div className='flex flex-col md:flex-row justify-center items-center md:gap-[100px] lg:gap-[220px]'>
         <div>
           <Image src={appIphone} alt='Xe App Iphone' width={350} />
         </div>
 
-        <div className='w-[350px] flex flex-col gap-4'>
+        <div className='w-[350px] flex flex-col justify-center items-center md:justify-normal md:items-start gap-4 mt-8 md:m-0'>
           <h3 className='font-bold t24a31'>
             Download the Xe App
           </h3>
@@ -49,7 +49,7 @@ export default function BlockDownloadApp() {
         </div>
       </div>
 
-      <div className='flex gap-60 justify-center items-center text-center mt-20'>
+      <div className='flex flex-col md:flex-row gap-16 lg:gap-60 justify-center items-center text-center mt-20'>
         <div>
           <Link href='#'><Image src={appStore} alt='App Store' width={135} /></Link>
         </div>

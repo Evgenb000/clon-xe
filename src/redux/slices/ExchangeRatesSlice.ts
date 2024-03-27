@@ -12,7 +12,7 @@ export const fetchCurrencyBYData = createAsyncThunk(
       today.setDate(today.getDate() - 2);
       const beforeYesterday = today.toISOString().split('T')[0];
 
-      const response = await axios.get(`https://api.freecurrencyapi.com/v1/historical?apikey=fca_live_EXYn5P9w8k5BCiu4SZyFqUABKANMPufl6lCj7AQg&date=${beforeYesterday}1`);
+      const response = await axios.get(`https://api.freecurrencyapi.com/v1/historical?apikey=fca_live_EXYn5P9w8k5BCiu4SZyFqUABKANMPufl6lCj7AQg&date=${beforeYesterday}`);
       const data = response.data;
       const currencyData = data.data[beforeYesterday];
       

@@ -38,6 +38,7 @@ export default function Converter() {
   const handleFromCurrencyChange = (currency: string) => {
     dispatch(setFromCurrency(currency));
     dispatch(setShowFromInput(false));
+    
     handleConvertOpen && handleConvert();
   };
   
@@ -154,9 +155,9 @@ export default function Converter() {
           ></input>
 
           {showFromInput && (
-            <div className="absolute bg-white border rounded-md shadow-md mt-1 overflow-y-auto max-h-40">
+            <div className="absolute flex flex-wrap justify-center bg-white border rounded-md shadow-md mt-1 overflow-y-auto w-60 md:w-80 p-2 max-h-28">
               {currencies.map((currency: string) => (
-                <button key={currency} className="p-2 cursor-pointer" onClick={() => handleFromCurrencyChange(currency)}>{currency}</button>
+                <button key={currency} className="p-2 cursor-pointer w-16 h-8" onClick={() => handleFromCurrencyChange(currency)}>{currency}</button>
               ))}
             </div>
           )}
@@ -179,9 +180,9 @@ export default function Converter() {
           ></input>
 
           {showToInput && (
-            <div className="absolute bg-white border rounded-md shadow-md mt-1 overflow-y-auto max-h-40">
+            <div className="absolute flex flex-wrap justify-center bg-white border rounded-md shadow-md mt-1 overflow-y-auto w-60 md:w-80 p-2 max-h-28">
               {currencies.map((currency: string) => (
-                <button key={currency} className="p-2 cursor-pointer" onClick={() => handleToCurrencyChange(currency)}>{currency}</button>
+                <button key={currency} className="p-2 cursor-pointer w-16 h-8" onClick={() => handleToCurrencyChange(currency)}>{currency}</button>
               ))}
             </div>
           )}

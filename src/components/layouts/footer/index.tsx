@@ -80,8 +80,8 @@ const CompanyInfo = [
 export default function Footer() {
   return (
     <div className="flex bottom-0 right-0 left-0 main-bg-blue w-screen min-h-screen text-center justify-center t-white">
-      <footer className="justify-center text-center items-center w-[1200px] pt-24 text-lg">
-        <div className="grid grid-cols-4 gap-9 text-left">
+      <footer className="justify-center text-center items-center w-[320px] md:w-[700px] lg:w-[900px] xl:w-[1200px] pt-24 text-lg">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-9 text-left">
           <div>
             <div className="t16a27 mb-3">Language</div>
             <div className="t14a21 flex">
@@ -105,7 +105,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="grid grid-cols-4 gap-9 mt-14 text-left">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-9 mt-14 text-left">
           <div>
             <div className="t16a27 mb-3">
               Transfer Money
@@ -145,12 +145,12 @@ export default function Footer() {
               Company Info
             </div>
 
-            <ul className="flex font-thin t12a18">
+            <ul className="flex flex-wrap font-thin t12a18">
               {CompanyInfo.map((item) => <li key={item} className="mr-4">{item}</li>)}
             </ul>
           </div>
 
-          <div className="mt-14 t14a21">
+          <div className="mb-12 md:mb-0 mt-14 t14a21">
             © 1995-2024 XE.com Inc.
           </div>
         </div>
