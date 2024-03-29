@@ -49,9 +49,9 @@ export default function CurrencyTools() {
         ))}
       </div>
 
-      <button className='btn-blue mt-12 w-[220px]'>
-        <Link href='/MoreTools'>More Tools</Link>
-      </button>
+      <Link href='/moreTools' className='flex justify-center items-center btn-blue mt-12 w-[220px]'>
+        More Tools
+      </Link>
     </div>
   )
 }

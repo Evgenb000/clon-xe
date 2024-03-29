@@ -14,6 +14,7 @@ import {
 import sendIcon from '@/images/homePage/iconSend.svg';
 import chartUp from '@/images/homePage/chartUp.svg';
 import chartDown from '@/images/homePage/chartDown.svg';
+import Link from 'next/link';
 
 export default function ExchangeRates() {
   const {
@@ -117,11 +118,11 @@ export default function ExchangeRates() {
                       </div>
 
                       <div className='w-16 md:w-20 lg:w-32 xl:w-40 flex justify-center'>
-                        <button className='btn-blue w-20 flex text-center items-center justify-center'>
+                        <Link href={`/send=${filteredCurr}`} className='btn-blue w-20 flex text-center items-center justify-center'>
                           <Image src={sendIcon} alt='send icon' width={24} height={24} />
 
                           Send
-                        </button>
+                        </Link>
                       </div>
 
                       {editCurrenciesOpen
