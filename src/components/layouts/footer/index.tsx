@@ -7,7 +7,6 @@ import iconTwitter from "@/images/homePage/iconTwitter.svg";
 import iconIn from "@/images/homePage/iconIn.svg";
 import iconInstagram from "@/images/homePage/iconInstagram.svg";
 import Link from "next/link";
-import arrowBottom from "@/images/homePage/arrowBottom.svg";
 
 const icons = [
   { name: "Facebook", src: iconFacebook, link: "https://www.facebook.com/xecom" },
@@ -86,8 +85,6 @@ export default function Footer() {
             <div className="t16a27 mb-3">Language</div>
             <div className="t14a21 flex">
               English
-              
-              <Image src={arrowBottom} alt="Arrow" width={10} height={10} className="ml-2" />
             </div>
           </div>
 
