@@ -9,7 +9,6 @@ XE.com is a website for currency conversion and providing financial data. My clo
 <ul>
   <li>Currency conversion based on current exchange rates</li>
   <li>Display of charts and currency rate data</li>
-  <li>Search and view financial news</li>
 </ul>
 
 <h3>Technologies</h3>
