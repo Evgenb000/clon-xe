@@ -27,13 +27,13 @@ export default function CustomersRecommend() {
     <div className='flex flex-col justify-center items-center mt-32 gap-10'>
       <h3 className='t30a39 text-blue-500'>What people are saying</h3>
 
-      <span className='t56a72 font-bold'>
+      <div className='t30a39 md:t56a72 font-bold text-center'>
         67,777 customers recommend Xe
-      </span>
+      </div>
 
-      <div className='flex gap-10 justify-center'> 
+      <div className='flex flex-col md:flex-row gap-10 justify-center'> 
         {items.map((item, id) => (
-          <div key={id} className='flex flex-col gap-8 rounded-3xl shadow-md px-6 py-12 w-[350px] h-[300px] bg-white'>
+          <div key={id} className='flex flex-col gap-8 rounded-3xl shadow-md px-6 py-12 w-[300px] md:w-[350px] h-[300px] bg-white'>
             <div>{item.rating === 5 && blockRating5}</div>
             <p className='font-bold t18a32'>{item.title}</p>
             <p className='t14a23'>{item.description}</p>

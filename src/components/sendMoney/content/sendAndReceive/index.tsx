@@ -28,23 +28,23 @@ export default function SendAndRecieve() {
       <div className='flex'>
           <div
             onClick={() => setToggle(false)}
-            className={`p-2 border cursor-pointer rounded-l-xl w-[200px] text-center ${toggle ? 'bg-white' : 'bg-green-400'}`}
+            className={`p-2 border cursor-pointer rounded-l-xl w-[180px] md:w-[200px] text-center ${toggle ? 'bg-white' : 'bg-green-400'}`}
           >
             Way to send
           </div>
           <div
             onClick={() => setToggle(true)}
-            className={`p-2 border cursor-pointer rounded-r-xl w-[200px] text-center ${!toggle ? 'bg-white' : 'bg-green-400'}`}
+            className={`p-2 border cursor-pointer rounded-r-xl w-[180px] md:w-[200px] text-center ${!toggle ? 'bg-white' : 'bg-green-400'}`}
           >
             Way to recieve
           </div>
       </div>
 
-      <h3 className='font-bold t40a52'>
+      <h3 className='font-bold t40a52 text-center'>
         Send money to over 200 countries in 100+ currencies
       </h3>
 
-      <div className='flex gap-10'>
+      <div className='flex flex-col lg:flex-row gap-10'>
         {!toggle
          ? send.map((item, id) => (
             <div key={id} className='flex flex-col justify-center items-center text-center gap-4 w-[355px] h-[380px] bg-white rounded-xl p-4'>

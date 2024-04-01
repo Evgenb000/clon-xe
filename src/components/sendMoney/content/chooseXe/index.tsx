@@ -33,16 +33,16 @@ const items = [
 
 export default function ChooseXe() {
   return (
-    <div className='w-[1200px] flex justify-center items-center text-center flex-col mx-auto my-40 gap-10'>
+    <div className='w-[320px] md:w-[700px] lg:w-[1200px] flex justify-center items-center text-center flex-col mx-auto my-40 gap-10'>
       <h3 className='text-blue-500 t30a39'>
         Why choose Xe
       </h3>
 
-      <span className='t56a72'>
+      <span className=' t40a52 md:t56a72 font-bold'>
         30+ Years of Excellence
       </span>
 
-      <div className='flex justify-center items-center text-center gap-32'>
+      <div className='flex flex-col lg:flex-row justify-center items-center text-center gap-12 lg:gap-32'>
         {items.map((item, id) => (
           <div key={id} className='flex flex-col justify-center items-center text-center gap-4 w-[250px]'>
             <div className='w-20 h-20 rounded-full bg-blue-100 flex justify-center items-center'>

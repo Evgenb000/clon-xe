@@ -14,11 +14,11 @@ export default function SendMoneySteps() {
     <div className="flex flex-col justify-center items-center gap-10 mt-40">
       <h3 className="font-bold text-blue-500 t30a39">6 easy steps</h3>
 
-      <span className="font-bold t56a72">
+      <div className="font-bold t56a72 text-center">
         How to send money online with Xe
-      </span>
+      </div>
 
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {steps.map((step, id) => (
           <div key={id} className="flex flex-col gap-4 w-[350px] h-[388px] rounded-3xl bg-white px-6 py-20">
             <span className="text-blue-500 t64a76 font-bold">{step.No}</span>
