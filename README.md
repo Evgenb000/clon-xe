@@ -1,38 +1,35 @@
-<h1 style="font-size: 24px;">The project is under development!</h1>
+<h1>This is a clone of the site <a href="https://www.xe.com">Xe.com</a></h1>
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h2><a href="https://evgenb000.github.io/clon-xe/">GitHub Pages</a></h2>
 
-## Getting Started
+<h3>Description</h3>
+XE.com is a website for currency conversion and providing financial data. My clone replicates the core functionalities of this website.
 
-First, run the development server:
+<h3>Features</h3>
+<ul>
+  <li>Currency conversion based on current exchange rates</li>
+  <li>Display of charts and currency rate data</li>
+  <li>Search and view financial news</li>
+</ul>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<h3>Technologies</h3>
+This project was developed using the following technologies:
+<ul>
+  <li>HTML</li>
+  <li>Tailwind CSS</li>
+  <li>Next.js v14</li>
+  <li>Redux Toolkit</li>
+  <li>Axios</li>
+  <li>and others...</li>
+</ul>
+<h3>Installation and Running</h3>
+Clone the repository on your local machine:
+</br>
+bash
+</br>
+git clone https://github.com/your-username/repository-name.git
+</br>
+to start: npm run dev
+</br>
+<h3>Contributions and Improvements</h3>
+I welcome your suggestions and improvements. If you have any ideas or want to contribute, please open a new Pull Request or create an Issue.
