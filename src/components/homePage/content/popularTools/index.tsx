@@ -58,7 +58,7 @@ export default function PopularTools() {
         ? <div className="flex justify-center items-center text-center gap-[40px] mt-4">
             {popularTools.map((tool) => (
               <div key={tool[1]} className="flex flex-col w-[240px] h-[440px] items-center text-center justify-around shadow-md rounded-lg px-8 py-4">
-                <Image src={tool[0]} alt={tool[1]} width={90} height={90} />
+                <Image src={tool[0]} alt={tool[1]} width={90} />
                 <h3 className="t20a26 font-bold">{tool[1]}</h3>
                 <p className="t16a27 text-left">{tool[2]}</p>
                 <Link

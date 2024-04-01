@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function NotFound() {
   return (
-    <div className=' '>
+    <div>
       <div className='flex justify-center items-center bg-gray-50 w-screen h-screen'>
         <div className='text-center w-[660px] p-6 -translate-y-40 bg-white rounded-2xl shadow-xl'>
           <h2 className='t30a39 font-bold'>Page not Found</h2>

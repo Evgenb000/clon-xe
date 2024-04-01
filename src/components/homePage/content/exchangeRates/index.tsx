@@ -119,7 +119,7 @@ export default function ExchangeRates() {
 
                       <div className='w-16 md:w-20 lg:w-32 xl:w-40 flex justify-center'>
                         <Link href={`/send=${filteredCurr}`} className='btn-blue w-20 flex text-center items-center justify-center'>
-                          <Image src={sendIcon} alt='send icon' width={24} height={24} />
+                          <Image src={sendIcon} alt='send icon' width={24} />
 
                           Send
                         </Link>

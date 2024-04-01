@@ -166,7 +166,7 @@ export default function Converter() {
         <div></div>
 
         <div className="flex justify-center items-center w-14 h-14 border rounded-full cursor-pointer">
-          <Image src={imageFromTo} alt="From To" width={20} height={20} />
+          <Image src={imageFromTo} alt="From To" width={20} />
         </div>
         
         <div className="font-bold">To</div>
@@ -204,11 +204,13 @@ export default function Converter() {
       <div>
         <div className="flex flex-col md:flex-row justify-between mt-10 gap-1 p-2">
           <div className="flex items-center gap-3 text-left bg-blue-50 t11a16 p-3 rounded-md mb-2">
-            <Image src={iconInfo} alt="Info icon" width={16} height={16} />
+            <Image src={iconInfo} alt="Info icon" width={16} />
+
             <div>
               We use the mid-market rate for our Converter. This is for informational purposes only.
               <br />
               You won’t receive this rate when sending money.&nbsp;
+
               <p className="underline text-blue-500 inline hover:no-underline cursor-pointer">
                 Login to view send rates
               </p>
